@@ -1,5 +1,6 @@
+import { KAKAO_API_KEY } from './env.js';
 async function getPlacesByPage(lat, lon, radius, page) {
-  const apiKey = '6ad6cb6800b567135ee7f8d09c8e8211';
+  const apiKey = KAKAO_API_KEY;
   const url = `https://dapi.kakao.com/v2/local/search/keyword.json?y=${lat}&x=${lon}&radius=${radius}&category_group_code=FD6&sort=distance&page=${page}&query=음식점`;
   let places;
   // page 1, 2, 3 돌면서 여러개 수집 후 array로 만들기
@@ -28,12 +29,10 @@ if (navigator.geolocation) {
     ];
     let options = '';
     places.forEach((placeName) => {
-      console.log(placeName);
       options += `<a href="#">${placeName}</a>`;
     });
     const list = document.getElementById('l_lunch');
     list.innerHTML = options;
-    console.log(places);
   });
 } else {
 }
@@ -43,8 +42,8 @@ if (navigator.geolocation) {
 
   function rolling(id, idx, cnt) {
     var items = document.querySelectorAll('#' + id + ' a');
-    visibleitem = items[idx].innerText;
-    console.log(idx);
+    let visibleitem = items[idx].innerText;
+
     items.forEach(function (d, i) {
       d.style.display = i == idx ? 'block' : 'none';
     });
