@@ -1,5 +1,7 @@
 Lunch Recommendation
 
+![alt text](./점메추.png)
+
 링크: https://chromewebstore.google.com/detail/%EC%A0%90%EB%A9%94%EC%B6%94/oaefomeoippfngdifjlhlbomapnggnnk
 
 점심 메뉴 추천 익스텐션!
